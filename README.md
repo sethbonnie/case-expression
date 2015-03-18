@@ -1,14 +1,50 @@
 # CaseExpression
 A `case-expression` is a control-construct similar to Haskell's `case` 
-expression. It takes 2 arguments, an expression used to match against 
-patterns and an associative array of pattern-block pairs. Once a 
-pattern matches, the block following that pattern is evaluated and it's 
-return value is returned as the result of the case. If a value is given 
-as the block, then it is returned as the result of the case expression.
+expression. 
 
-It is a bit more powerful than regular `switch` statements because a 
-`case-statement` allows you to match your expression to arbitrary objects, 
-including functions and regular expressions. 
+## Synopsis
+A `case-expression` is a bit more powerful than regular `switch` statements 
+because it allows you to match your expression to arbitrary objects, 
+including functions and regular expressions. The signature for a 
+`case-expression` is as follows:
+
+```js
+caseExpression( <Expression>, [
+  <Pattern1>, <Block1>,
+  <Pattern2>, <Block2>,
+  ...
+  <PatternN>, <BlockN>
+]);
+```
+
+It takes 2 arguments, an `expression` used to match against 
+patterns and an associative array of pattern-block pairs. Once a 
+`pattern` matches, the `block` following that pattern is evaluated and it's 
+value is returned as the result of the `case-expression`.
+
+##### Expressions
+Expressions are regular JavaScript values -- Numbers, Strings, Booleans, 
+Objects, etc. These are passed in as the first value of the `case-expression` 
+and used to match against the patterns in the associative array.
+
+##### Patterns
+Pattern values are very flexible, they can be either predicate functions, 
+regular expressions, or regular JavaScript values.
+  
+  - *Predicates* are functions that take the `expression` as an argument and 
+  return a `boolean` value. If the predicate returns `true`, the result 
+  of the `case-expression` is the block following the predicate.
+  
+  - *Regular expressions* are tested against the given `expression` and 
+  if there is a match, the result of the `case-expression` is the subsequent 
+  `block`.
+  
+  - *Regular values* are tested against the `expression` via the equality operators.
+  
+##### Blocks
+If a `block` is a function, the function is evaluated and it's result is returned 
+as the value of the `case-expression`. Otherwise, if the `block` is another type of 
+value, then that value is returned as the value of the `case-expression`.
 
 ## Install
     $ npm install case-expression 
