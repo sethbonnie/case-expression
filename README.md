@@ -1,4 +1,4 @@
-# CaseExpression
+# Case-Expression
 A `case-expression` is a control-construct similar to Haskell's `case` 
 expression. 
 
