@@ -1,0 +1,25 @@
+{
+  "name": "case-expression",
+  "version": "0.0.0",
+  "main": "case-expression.js",
+  "description": "`case-expression` is a control-construct similar to Haskell's `case` expression. It takes 2 arguments, a pattern to match on and an associative array of pattern-block pairs.",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sethbonnie/case-expression.git"
+  },
+  "keywords": [
+    "case"
+  ],
+  "author": "Seth Bonnie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sethbonnie/case-expression/issues"
+  },
+  "homepage": "https://github.com/sethbonnie/case-expression"
+}
