@@ -6,6 +6,10 @@ pattern matches, the block following that pattern is evaluated and it's
 return value is returned as the result of the case. If a value is given 
 as the block, then it is returned as the result of the case expression.
 
+It is a bit more powerful than regular `switch` statements because a 
+`case-statement` allows you to match your expression to arbitrary objects, 
+including functions and regular expressions. 
+
 ## Install
     $ npm install case-expression 
 
