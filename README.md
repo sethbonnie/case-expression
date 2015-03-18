@@ -66,7 +66,7 @@ rl.question( "Do you like node.js? [yes/no]\n", function( ans ) {
       rl.close();
     },
     /.*/, function() {
-      console.log( 'Ok...' );
+      console.log( 'Ok...I see you have a penchant for following simple directions!' );
       rl.close();
     }
   ]);
