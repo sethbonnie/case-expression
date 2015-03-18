@@ -1,5 +1,10 @@
 # CaseExpression
-`case-expression` is a control-construct similar to Haskell's `case` expression. It takes 2 arguments, a pattern to match on and an associative array of pattern-block pairs.
+A `case-expression` is a control-construct similar to Haskell's `case` 
+expression. It takes 2 arguments, an expression used to match against 
+patterns and an associative array of pattern-block pairs. Once a 
+pattern matches, the block following that pattern is evaluated and it's 
+return value is returned as the result of the case. If a value is given 
+as the block, then it is returned as the result of the case expression.
 
 ## Install
     $ npm install case-expression 
@@ -14,7 +19,7 @@ var rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.question( "Do you like node.js? [yes/no]", function( ans ) {
+rl.question( "Do you like node.js? [yes/no]\n", function( ans ) {
   _case( ans, [
     /yes|no/i, function() {
       console.log( 'Thanks for your feedback!' );
