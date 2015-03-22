@@ -2,7 +2,7 @@
   * A case-expression is a function that simulates a slightly more expressive
   * `switch` statement. It's influenced by Haskell's case expression.
   *
-  * @param {Any} expr - A value that is tested against the patterns in the
+  * @param {*} expr - A value that is tested against the patterns in the
   *   `patterns` associative array.
   * @param {Array} patterns - An associative array holding sets of 
   *   `pattern` -> `block` pairs.
@@ -29,8 +29,8 @@ module.exports = function caseExpression( expr, patterns ) {
 };
 
 /**
-  * @param {Any} value
-  * @param {Any} pattern - A pattern that `value` is matched against. It
+  * @param {*} value
+  * @param {*} pattern - A pattern that `value` is matched against. It
   *   it can also be a predicate value.
   * @returns {Boolean} Returns true if `value` and `pattern` have the
   */
@@ -48,7 +48,7 @@ function equal( value, pattern ) {
 }
 
 /**
-  * @param {Any} x
+  * @param {*} x
   * @returns {Boolean} Returns true if its argument is a regular expression.
   */
 function isRegExp( x ) {
@@ -56,7 +56,7 @@ function isRegExp( x ) {
 }
 
 /**
-  * @param {Any} fn
+  * @param {*} fn
   * @returns {Boolean} Returns true if its argument is a function.
   */
 function isFunction( fn ) {
