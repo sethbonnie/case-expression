@@ -1,4 +1,16 @@
-module.exports = function( expr, patterns ) {
+/** 
+  * A case-expression is a function that simulates a slightly more expressive
+  * `switch` statement. It's influenced by Haskell's case expression.
+  *
+  * @param {Any} expr - A value that is tested against the patterns in the
+  *   `patterns` associative array.
+  * @param {Array} patterns - An associative array holding sets of 
+  *   `pattern` -> `block` pairs.
+  * @returns {undefined|Object} Returns `undefined` if no patterns matched
+  *   the given expression. Otherwise it returns the block. If the block is
+  *   a function, it returns the result of evaluating that function.
+  */
+module.exports = function caseExpression( expr, patterns ) {
   var len = patterns.length;
   var block;
   var i;
