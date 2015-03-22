@@ -1,6 +1,6 @@
 {
   "name": "case-expression",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "case-expression.js",
   "description": "`case-expression` is a control-construct similar to Haskell's `case` expression. It takes 2 arguments, a pattern to match on and an associative array of pattern-block pairs.",
   "directories": {
