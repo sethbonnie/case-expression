@@ -16,22 +16,37 @@ module.exports = function( expr, patterns ) {
   }
 };
 
-function equal( a, b ) {
-  if ( ( a === b ) || 
-       ( a == b ) ||
-       ( isFunction( b ) && b(a) ) ||
-       ( isRegExp( b ) && b.test( a ) ) ||
-       ( isRegExp( b ) && isRegExp( a ) && a.toString() == b.toString() )
-      ) {
+/**
+  * @param {Any} value
+  * @param {Any} pattern - A pattern that `value` is matched against. It
+  *   it can also be a predicate value.
+  * @returns {Boolean} Returns true if `value` and `pattern` have the
+  */
+function equal( value, pattern ) {
+  if ( ( value === pattern ) ||
+       ( isFunction( pattern ) && pattern(value) ) ||
+       ( isRegExp( pattern ) && 
+         isRegExp( value ) && 
+         value.toString() == pattern.toString() ) ||
+       ( isRegExp( pattern ) && pattern.test( value ) ) ||
+       ( isRegExp( value ) && value.test( pattern ) ) ) {
     return true;
   }
   return false;
 }
 
+/**
+  * @param {Any} x
+  * @returns {Boolean} Returns true if its argument is a regular expression.
+  */
 function isRegExp( x ) {
   return x instanceof RegExp;
 }
 
+/**
+  * @param {Any} fn
+  * @returns {Boolean} Returns true if its argument is a function.
+  */
 function isFunction( fn ) {
   return typeof fn === 'function';
 }
