@@ -1,6 +1,6 @@
 {
   "name": "case-expression",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "case-expression.js",
   "description": "A control construct similar to Haskell's case expression",
   "directories": {
